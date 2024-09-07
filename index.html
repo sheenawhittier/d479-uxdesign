@@ -22,6 +22,9 @@
       background-color: #388E3C; /* Island green */
       padding: 10px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
     nav a {
       margin: 0 15px;
@@ -29,6 +32,7 @@
       color: white;
       font-weight: bold;
       font-size: 16px;
+      text-align: center;
     }
     nav a:hover {
       color: #FFEB3B; /* Bright yellow on hover */
@@ -58,7 +62,6 @@
     p {
       font-size: 18px;
       line-height: 1.6;
-      text-align: center;
     }
     a.button {
       background-color: #4CAF50; /* Green button */
@@ -67,20 +70,36 @@
       text-align: center;
       text-decoration: none;
       border-radius: 5px;
-      display: flex;
+      display: inline-block;
       margin-top: 10px;
     }
     a.button:hover {
       background-color: #66BB6A; /* Lighter green on hover */
     }
     img {
-      width: 500px;
+      width: 30%;
       height: auto;
       border-radius: 10px;
       margin-top: 10px;
-      text-align: center;
     }
   </style>
+  <script>
+    function filterRestaurants() {
+      const filterValue = document.getElementById('cuisine-filter').value;
+      const allRestaurants = document.getElementsByClassName('restaurant');
+
+      for (let i = 0; i < allRestaurants.length; i++) {
+        const restaurant = allRestaurants[i];
+        const cuisineType = restaurant.getAttribute('data-cuisine');
+
+        if (filterValue === 'all' || cuisineType === filterValue) {
+          restaurant.style.display = 'block';
+        } else {
+          restaurant.style.display = 'none';
+        }
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -99,8 +118,8 @@
 </nav>
 
 <section id="home">
-  <h2>Welcome to Taniti</h2>
-  <p>Explore our tropical paradise, where the beaches are pristine, the rainforest is lush, and adventure awaits.</p>
+  <h2>Home</h2>
+  <p>Welcome to Taniti! Explore our tropical paradise, where the beaches are pristine, the rainforest is lush, and adventure awaits.</p>
   <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVhY2h8ZW58MHx8MHx8fDA%3D" alt="Tropical Beach in Taniti">
   <a href="#tours" class="button">Plan Your Visit</a>
 </section>
@@ -113,7 +132,7 @@
   <!-- Snorkeling Tour Details -->
   <h3>Snorkeling Tours</h3>
   <p>Explore Taniti's vibrant marine life with our snorkeling tours! Duration: 3 hours | Cost: $50 per person.</p>
-  <a href="#" class="button">Book Snorkeling Tour</a>
+  <a href="#bookings" class="button">Book Snorkeling Tour</a>
 
   <h3>Merriton Landing Activities</h3>
   <p>Enjoy zip-lining, boat tours, and pub visits at Merriton Landing. Perfect for families and adventure seekers alike.</p>
@@ -127,11 +146,11 @@
   <!-- Hotel Listings with Booking Links -->
   <h3>Resort Hotel</h3>
   <p>Luxurious rooms with ocean views and a full-service spa. Price: $200/night.</p>
-  <a href="#" class="button">Book Now</a>
+  <a href="#bookings" class="button">Book Now</a>
 
   <h3>Beachside B&B</h3>
   <p>A cozy bed & breakfast just steps from the beach. Price: $100/night.</p>
-  <a href="#" class="button">Book Now</a>
+  <a href="#bookings" class="button">Book Now</a>
 </section>
 
 <section id="restaurants">
@@ -141,7 +160,7 @@
 
   <!-- Filter Options for Cuisine -->
   <label for="cuisine-filter">Filter by cuisine:</label>
-  <select id="cuisine-filter">
+  <select id="cuisine-filter" onchange="filterRestaurants()">
     <option value="all">All</option>
     <option value="seafood">Seafood</option>
     <option value="local">Local</option>
@@ -149,11 +168,15 @@
   </select>
 
   <!-- Restaurant Listings -->
-  <h3>Seaside Grill (Seafood)</h3>
-  <p>Enjoy fresh seafood and ocean views. Specialty: Grilled lobster.</p>
+  <div class="restaurant" data-cuisine="seafood">
+    <h3>Seaside Grill (Seafood)</h3>
+    <p>Enjoy fresh seafood and ocean views. Specialty: Grilled lobster.</p>
+  </div>
 
-  <h3>Bamboo Grove (Pan-Asian)</h3>
-  <p>A fusion of Pan-Asian flavors in a cozy atmosphere. Specialty: Szechuan beef.</p>
+  <div class="restaurant" data-cuisine="pan-asian">
+    <h3>Bamboo Grove (Pan-Asian)</h3>
+    <p>A fusion of Pan-Asian flavors in a cozy atmosphere. Specialty: Szechuan beef.</p>
+  </div>
 </section>
 
 <section id="transportation">
@@ -171,6 +194,11 @@
 <section id="contact">
   <h2>Contact Us</h2>
   <p>Have questions? Contact us at info@tanitiisland.com or call +1-800-TANITI.</p>
+</section>
+
+<section id="bookings">
+  <h2>Booking Information</h2>
+  <p>Thank you for your interest in booking with us! Currently, all bookings are processed through our partner site. Stay tuned for direct booking functionality soon!</p>
 </section>
 
 <footer>
