@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taniti Tourism Website</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E8F5E9; /* Light green background */
+        }
+        header {
+            background-color: #2E7D32; /* Dark green */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            background-color: #388E3C; /* Island green */
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        nav a:hover {
+            color: #FFEB3B; /* Bright yellow on hover */
+        }
+        section {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #A5D6A7; /* Softer green for content sections */
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        section h2 {
+            color: #1B5E20; /* Dark green for section titles */
+        }
+        footer {
+            background-color: #2E7D32;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: static;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Additional Styling */
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        a.button {
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        a.button:hover {
+            background-color: #66BB6A; /* Lighter green on hover */
+        }
+        img {
+            width: 225px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Taniti</h1>
+    <p>Experience the island's beauty and adventure</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#attractions">Attractions</a>
+    <a href="#lodging">Lodging</a>
+    <a href="#restaurants">Restaurants</a>
+    <a href="#tours">Tours</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Home</h2>
+    <p>Welcome to Taniti! Explore our tropical paradise, where the beaches are pristine, the rainforest is lush, and adventure awaits.</p>
+    <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmVhY2h8ZW58MHx8MHx8fDA%3D" alt="Tropical Beach in Taniti">
+    <a href="#tours" class="button">Plan Your Visit</a>
+</section>
+
+<section id="attractions">
+    <h2>Attractions</h2>
+    <p>Discover snorkeling tours, rainforest exploration, and the famous Tanitian volcano. Our local attractions are perfect for adventure seekers and nature lovers alike.</p>
+    <img src="https://images.unsplash.com/photo-1524070600608-41d598325be8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c25vcmtsaW5nfGVufDB8fDB8fHww" alt="Snorkeling in Taniti">
+</section>
+
+<section id="lodging">
+    <h2>Lodging</h2>
+    <p>Find the perfect place to stay! Whether you prefer luxurious resorts or cozy bed & breakfasts, Taniti has lodging options for every budget.</p>
+    <img src="https://images.unsplash.com/photo-1618245318763-a15156d6b23c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcGljYWwlMjByZXNvcnR8ZW58MHx8MHx8fDA%3D" alt="Beautiful Resort in Taniti">
+    <h3>Resort Hotel</h3>
+    <p>Luxurious rooms with ocean views and a full-service spa. Price: $200/night.</p>
+    <a href="#" class="button">Book Now</a>
+
+    <h3>Beachside B&B</h3>
+    <p>A cozy bed & breakfast just steps from the beach. Price: $100/night.</p>
+    <a href="#" class="button">Book Now</a>
+</section>
+
+<section id="restaurants">
+    <h2>Restaurants</h2>
+    <p>Explore Taniti's diverse cuisine. Use the filters below to find your perfect meal!</p>
+    <img src="https://images.unsplash.com/photo-1448043552756-e747b7a2b2b8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2VhZm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Seafood Dish in Taniti">
+    <!-- Filter Options for Cuisine -->
+    <label for="cuisine-filter">Filter by cuisine:</label>
+    <select id="cuisine-filter">
+        <option value="all">All</option>
+        <option value="seafood">Seafood</option>
+        <option value="local">Local</option>
+        <option value="pan-asian">Pan-Asian</option>
+    </select>
+
+    <!-- Restaurant Listings -->
+    <h3>Seaside Grill (Seafood)</h3>
+    <p>Enjoy fresh seafood and ocean views. Specialty: Grilled lobster.</p>
+
+    <h3>Bamboo Grove (Pan-Asian)</h3>
+    <p>A fusion of Pan-Asian flavors in a cozy atmosphere. Specialty: Szechuan beef.</p>
+</section>
+
+<section id="tours">
+    <h2>Tours & Activities</h2>
+    <p>Embark on guided tours to experience Taniti’s natural wonders and vibrant culture. Book your adventure today!</p>
+    <img src="https://images.unsplash.com/photo-1559827291-72ee739d0d9a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8anVuZ2xlJTIwdG91cnxlbnwwfHwwfHx8MA%3D%3D" alt="Guided Tour in Taniti">
+    <h3>Snorkeling Tours</h3>
+    <p>Explore Taniti's vibrant marine life with our snorkeling tours! Duration: 3 hours | Cost: $50 per person.</p>
+    <a href="#" class="button">Book Snorkeling Tour</a>
+
+    <h3>Merriton Landing Activities</h3>
+    <p>Enjoy zip-lining, boat tours, and pub visits at Merriton Landing. Perfect for families and adventure seekers alike.</p>
+
+</section>
+<section id="transportation">
+    <h2>Public Transportation</h2>
+    <p>Getting around the island is easy! Here are your options:</p>
+    <img src="https://images.unsplash.com/photo-1590075700133-9246b1f367b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHRyYW5zcG9ydGF0aW9ufGVufDB8fDB8fHww" alt="Transportation">
+
+    <!-- Transportation Options -->
+    <h3>Bus Service</h3>
+    <p>Buses run from Taniti City to Yellow Leaf Bay every 30 minutes. Cost: $5 per trip.</p>
+
+    <h3>Taxis</h3>
+    <p>Taxis are available throughout the island. Rates start at $10 for short trips.</p>
+</section>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions? Contact us at info@tanitiisland.com or call +1-800-TANITI.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Taniti Tourism. All rights reserved. | Photo credits: Taniti Stock Photography</p>
+</footer>
+
+</body>
+</html>
